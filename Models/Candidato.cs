@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace aec_mvc_entity_framework.Models
 {
-    [Table ("candidatos")]
+    [Table("candidatos")]
     public class Candidato
     {
         [Key]
@@ -39,7 +39,7 @@ namespace aec_mvc_entity_framework.Models
         [Column("profissaoId")]
         [ForeignKey("ProfissaoId")]
         [Required]
-        public int ProfissaoId { get; set; } 
+        public int ProfissaoId { get; set; }
         public Profissao Profissao { get; set; }
 
         [Column("logradouro", TypeName = "nvarchar")]

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using aec_mvc_entity_framework.Models;
@@ -27,7 +23,7 @@ namespace aec_mvc_entity_framework.Controllers
 
         public IActionResult Privacy()
         {
-            
+
             return View();
         }
 

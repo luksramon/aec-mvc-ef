@@ -10,7 +10,7 @@ namespace aec_mvc_entity_framework.Models
         public string Nascimento { get; set; }
         public string Email { get; set; }
         public string Telefone { get; set; }
-        
+
         // public int ProfissaoId { get; set; } 
         public string Logradouro { get; set; }
         public string Complemento { get; set; }

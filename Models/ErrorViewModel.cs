@@ -1,5 +1,3 @@
-using System;
-
 namespace aec_mvc_entity_framework.Models
 {
     public class ErrorViewModel
