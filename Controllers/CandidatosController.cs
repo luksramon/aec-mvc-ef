@@ -1,5 +1,3 @@
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -49,11 +47,11 @@ namespace aec_mvc_entity_framework.Controllers
         // GET: Candidatos/Create
         public IActionResult Create()
         {
-            
+
             ViewData["ProfissaoId"] = new SelectList(_context.Profissoes, "Id", "Descricao");
             return View();
-            
-            
+
+
         }
 
         // POST: Candidatos/Create
@@ -62,33 +60,36 @@ namespace aec_mvc_entity_framework.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Cpf,Nome,Nascimento,Email,Telefone,ProfissaoId,Logradouro,Complemento,Numero,Bairro,Cidade,Cep,Estado")] Candidato candidato)
-        {                   
-                if (ModelState.IsValid)
+        {
+            if (ModelState.IsValid)
+            {
+                var mensagem = "";
+
+                try
                 {
-                    var mensagem = "";
+                    _context.Add(candidato);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
+                }
+                catch (SqlException)
+                {
+                    mensagem += "ddds";
+                }
+                catch (DbUpdateException)
+                {
+                    mensagem += "ddds";
 
-                    try{                    
-                        _context.Add(candidato);
-                        await _context.SaveChangesAsync();
-                        return RedirectToAction(nameof(Index));
-                    }
-                    catch (SqlException){
-                        mensagem += "ddds";
-                    }
-                    catch(DbUpdateException){
-                        mensagem += "ddds";
-
-                        //return BadRequest("DCDB");                        
-                        
-                    }
-                
-                    ViewBag.Erro = mensagem;
-                    ViewBag.Candidato = candidato;
-                    return View("Create");
+                    //return BadRequest("DCDB");                        
 
                 }
-                ViewData["ProfissaoId"] = new SelectList(_context.Profissoes, "Id", "Descricao", candidato.ProfissaoId);
-                return View(candidato);           
+
+                ViewBag.Erro = mensagem;
+                ViewBag.Candidato = candidato;
+                return View("Create");
+
+            }
+            ViewData["ProfissaoId"] = new SelectList(_context.Profissoes, "Id", "Descricao", candidato.ProfissaoId);
+            return View(candidato);
         }
 
         // GET: Candidatos/Edit/5
