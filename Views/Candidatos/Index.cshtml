@@ -15,43 +15,43 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Cpf)
+                CPF
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Nome)
+                Nome:
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Nascimento)
+                Data de Nascimento:
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Email)
+                E-mail:
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Telefone)
+                Telefone:
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Profissao)
+                Escolha a vaga:
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Logradouro)
+                Logradouro:
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Complemento)
+                Complemento:
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Numero)
+                Número:
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Bairro)
+                Bairro:
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Cidade)
+                Cidade:
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Cep)
+                CEP:
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Estado)
+                Estado:
             </th>
             <th></th>
         </tr>
@@ -102,8 +102,12 @@
                 <button type="button" class="btn btn-block btn-info" style="max-width: 100px;">
                     <a asp-action="Edit" asp-route-id="@item.Id" style="color: #fff; font-size: 16px; font-weight: bold; text-decoration: none;">Editar</a>
                 </button>
-                <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Excluir</a>
+                <button type="button" class="btn btn-block btn-secondary" style="max-width: 100px;">
+                    <a asp-action="Details" asp-route-id="@item.Id" style="color: #fff; font-size: 16px; font-weight: bold; text-decoration: none;">Detalhes</a>
+                </button>
+                <button type="button" class="btn btn-block btn-danger" style="max-width: 100px;">
+                    <a asp-action="Delete" asp-route-id="@item.Id" style="color: #fff; font-size: 16px; font-weight: bold; text-decoration: none;">Excluir</a>
+                </button>
             </td>
         </tr>
 }
