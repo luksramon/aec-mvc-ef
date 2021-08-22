@@ -7,7 +7,9 @@
 <h1>Início</h1>
 
 <p>
-    <a asp-action="Create">Inserir novo</a>
+    <button type="button" class="btn btn-block btn-primary" style="max-width: 100px;">
+        <a asp-action="Create" style="color: #fff; font-size: 16px; font-weight: bold; text-decoration: none;">Cadastrar</a>
+    </button>
 </p>
 <table class="table">
     <thead>
@@ -97,7 +99,9 @@
                 @Html.DisplayFor(modelItem => item.Estado)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                <button type="button" class="btn btn-block btn-info" style="max-width: 100px;">
+                    <a asp-action="Edit" asp-route-id="@item.Id" style="color: #fff; font-size: 16px; font-weight: bold; text-decoration: none;">Editar</a>
+                </button>
                 <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
                 <a asp-action="Delete" asp-route-id="@item.Id">Excluir</a>
             </td>

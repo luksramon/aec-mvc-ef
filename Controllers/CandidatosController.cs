@@ -73,18 +73,16 @@ namespace aec_mvc_entity_framework.Controllers
                 }
                 catch (SqlException)
                 {
-                    mensagem += "ddds";
+                    mensagem += "Erro";
                 }
                 catch (DbUpdateException)
                 {
-                    mensagem += "ddds";
-
-                    //return BadRequest("DCDB");                        
+                    mensagem += "Erro";                      
 
                 }
 
                 ViewBag.Erro = mensagem;
-                ViewBag.Candidato = candidato;
+                ViewBag.Candidato = candidato;                
                 return View("Create");
 
             }
