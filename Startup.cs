@@ -1,11 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using aec_mvc_entity_framework.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -29,7 +24,7 @@ namespace aec_mvc_entity_framework
             var connectionString = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<DbContexto>(options => options.UseSqlServer(connectionString));
             services.AddControllersWithViews();
-            services.AddCoreAdmin();
+            services.AddCoreAdmin();  
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,7 +42,7 @@ namespace aec_mvc_entity_framework
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            
             app.UseRouting();
 
             app.UseCors(x => x

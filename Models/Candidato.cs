@@ -1,4 +1,3 @@
-using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -12,7 +11,7 @@ namespace aec_mvc_entity_framework.Models
         public int Id { get; set; }
 
         [Column("cpf", Order = 2)]
-        [MaxLength(11)]
+        [MaxLength(14)]
         [Required]
         public string Cpf { get; set; }
 
@@ -68,7 +67,7 @@ namespace aec_mvc_entity_framework.Models
         public string Cidade { get; set; }
 
         [Column("cep", TypeName = "nvarchar")]
-        [MaxLength(8)]
+        [MaxLength(9)]
         [Required]
         public string Cep { get; set; }
 
