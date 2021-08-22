@@ -29,6 +29,7 @@ namespace aec_mvc_entity_framework
             var connectionString = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<DbContexto>(options => options.UseSqlServer(connectionString));
             services.AddControllersWithViews();
+            services.AddCoreAdmin();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
