@@ -17,7 +17,6 @@ namespace aec_mvc_entity_framework.Controllers
 
         public IActionResult Index()
         {
-            ViewBag.Api = ApiService.GetApi();
             return View();
         }
 

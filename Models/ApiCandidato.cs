@@ -1,6 +1,6 @@
 namespace aec_mvc_entity_framework.Models
 {
-    public record Api
+    public record ApiCandidato
     {
         public int Id { get; set; }
         public string Cpf { get; set; }
@@ -8,8 +8,7 @@ namespace aec_mvc_entity_framework.Models
         public string Nascimento { get; set; }
         public string Email { get; set; }
         public string Telefone { get; set; }
-
-        // public int ProfissaoId { get; set; } 
+        public int ProfissaoId { get; set; } 
         public string Logradouro { get; set; }
         public string Complemento { get; set; }
         public string Numero { get; set; }

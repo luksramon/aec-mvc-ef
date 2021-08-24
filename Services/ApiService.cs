@@ -8,18 +8,18 @@ namespace aec_mvc_entity_framework.Services
 {
     public class ApiService
     {
-      public static async Task<List<Api>> GetApi()
+      public static async Task<List<ApiCandidato>> GetApiCandidatos()
       {
           HttpClient http = new HttpClient();
 
-          var response = await http.GetAsync($"{Program.ApiHost}/api/candidatos");
+          var response = await http.GetAsync($"{Program.ApiHost}api/Candidatos");
           if(response.IsSuccessStatusCode)
           {
               var resultado = response.Content.ReadAsStringAsync().Result;
-              var Api = JsonConvert.DeserializeObject<List<Api>>(resultado);
-              return Api;
+              var candidatos = JsonConvert.DeserializeObject<List<ApiCandidato>>(resultado);
+              return candidatos;
           }
-          return new List<Api>();
+          return new List<ApiCandidato>();
       }
     }
 }
