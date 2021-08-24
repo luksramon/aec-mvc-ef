@@ -11,6 +11,8 @@ namespace aec_mvc_entity_framework.Services
 
             modelBuilder.Entity<Candidato>().HasIndex(u => u.Cpf).IsUnique();
 
+            modelBuilder.Entity<Profissao>().HasIndex(u => u.Nome).IsUnique();
+
         }
         public DbSet<Candidato> Candidatos { get; set; }
         public DbSet<Profissao> Profissoes { get; set; }
