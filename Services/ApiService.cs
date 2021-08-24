@@ -2,10 +2,9 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 using aec_mvc_entity_framework.Models;
-using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 
-namespace aec_mvc_entity_framework.Services 
+namespace aec_mvc_entity_framework.Services
 {
     public class ApiService
     {
